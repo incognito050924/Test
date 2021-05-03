@@ -40,7 +40,6 @@
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
             <version>1.2.0</version>
-            <type>bundle</type>
         </dependency>
 
         <dependency>
@@ -81,6 +80,39 @@
             <artifactId>commons-email</artifactId>
             <version>1.5</version>
         </dependency>
+
+        <!-- SOAP Plugins -->
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-jaxrpc</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-saaj</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-wsdl4j</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>wsdl4j</groupId>-->
+<!--            <artifactId>wsdl4j</artifactId>-->
+<!--            <version>1.6.3</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.lucee</groupId>
+            <artifactId>commons-discovery</artifactId>
+            <version>0.5.0</version>
+        </dependency>
+        <!-- SOAP Plugins -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
