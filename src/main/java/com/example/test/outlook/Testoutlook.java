@@ -12,12 +12,20 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.simplejavamail.MailException;
+import org.simplejavamail.api.email.Email;
+import org.simplejavamail.api.mailer.Mailer;
+import org.simplejavamail.api.mailer.config.TransportStrategy;
+import org.simplejavamail.email.EmailBuilder;
+import org.simplejavamail.mailer.MailerBuilder;
+
 
 public class Testoutlook {
 
 	public static void main(String[] args) throws Exception {
-		sendMailOutlook();
+//		sendMailOutlook();
 //		sendMail();
+		simpleMailTest();
 		
 	}
 	
@@ -83,5 +91,26 @@ public class Testoutlook {
 	    transport.close();
 	}
 		
-
+	public static void simpleMailTest() {
+		
+		Email email = EmailBuilder.startingBlank()
+				.from("테스트 아웃룩", "odasd42@outlook.kr")
+				.to("박한빈", "odasd43@ecoletree.com")
+				.withSubject("outLook Test")
+				.withPlainText("We should meet up!")
+				.buildEmail();
+		
+		Mailer mailer = MailerBuilder
+				.withSMTPServer("smtp-mail.outlook.com", 587, "odasd42@outlook.kr", "lemons1945")
+				.withTransportStrategy(TransportStrategy.SMTP)
+				.buildMailer();
+		
+		try {
+			mailer.sendMail(email);
+			System.out.println("Exiting...");
+		} catch(MailException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
